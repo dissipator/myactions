@@ -15,6 +15,10 @@ jobs:
        env:
         NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
         USER_PASS: Aa123456789
+        
+     - name: Run Start Script
+       run: source ubuntu-start.sh
+      
      - name: Don't kill instace
        if: ${{ failure() }}
        run: sleep 8h   
