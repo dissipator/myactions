@@ -18,7 +18,7 @@ chmod +x speedtest-cli
 #wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
 #bash gcloud.sh
 
-cat >./ngrok.conf<<EOF
+cat >$HOME/bin/ngrok.conf<<EOF
 server_addr: "ng.dissipator.ga:4443"
 trust_host_root_certs: false
 tunnels:
@@ -37,9 +37,9 @@ sudo apt install -y neofetch python3 python3-pip
 #rm -rf $HOME/bin/yd $HOME/bin/doexec.sh
 curl  -o $HOME/bin/yd http://pi.lucas.ga:2280/luci-static/bin/yd && sudo chmod +x $HOME/bin/yd
 curl  -o $HOME/bin/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh && sudo chmod +x $HOME/bin/doexec.sh
-cd ${HOME} && pwd && ls -l 
+
 #wssh &
-wget http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
-wget http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x ngrok && ./ngrok --config=./ngrok.conf start-all &
-netstat -lntp 
+curl -o $HOME/bin/go-bindata  http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
+curl -o $HOME/bin/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/bin/* && $HOME/bin/ngrok --config=$HOME/bin/ngrok.conf start-all 
+ls -l $HOME/bin/
 #/content/bin/yd https://youtu.be/LWgGnZ9BdrU
