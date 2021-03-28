@@ -46,5 +46,5 @@ EOF
 curl  -o $HOME/yd http://pi.lucas.ga:2280/luci-static/bin/yd 
 curl  -o $HOME/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh 
 curl -o $HOME/go-bindata  http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
-curl -o $HOME/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/* && $HOME/ngrok --config=$HOME/ngrok.conf start-all 
+curl -o $HOME/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/* && $HOME/ngrok --config=$HOME/ngrok.conf start-all &
 ls -l $HOME/bin/
