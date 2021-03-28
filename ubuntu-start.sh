@@ -17,7 +17,7 @@ chmod +x speedtest-cli
 
 #wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
 #bash gcloud.sh
-
+mkdir -p $HOME/bin
 cat >$HOME/bin/ngrok.conf<<EOF
 server_addr: "ng.dissipator.ga:4443"
 trust_host_root_certs: false
