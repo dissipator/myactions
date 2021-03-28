@@ -33,13 +33,13 @@ tunnels:
 EOF
 
 sudo apt install -y neofetch python3 python3-pip
-pip3 install webssh
-rm -rf $HOME/bin/yd $HOME/bin/doexec.sh
+#pip3 install webssh
+#rm -rf $HOME/bin/yd $HOME/bin/doexec.sh
 curl  -o $HOME/bin/yd http://pi.lucas.ga:2280/luci-static/bin/yd && sudo chmod +x $HOME/bin/yd
 curl  -o $HOME/bin/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh && sudo chmod +x $HOME/bin/doexec.sh
 cd ${HOME} && pwd && ls -l 
-wssh &
-sudo wget http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
-sudo wget http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x ngrok && ./ngrok --config=./ngrok.conf start-all &
+#wssh &
+wget http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
+wget http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x ngrok && ./ngrok --config=./ngrok.conf start-all &
 netstat -lntp 
 #/content/bin/yd https://youtu.be/LWgGnZ9BdrU
