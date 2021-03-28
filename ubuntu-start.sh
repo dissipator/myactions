@@ -28,7 +28,7 @@ echo "### Start ngrok proxy for 22 port ###"
 #wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
 #bash gcloud.sh
 mkdir -p $HOME/bin
-cat >$HOME/bin/ngrok.conf<<EOF
+cat >$HOME/ngrok.conf<<EOF
 server_addr: "ng.dissipator.ga:4443"
 trust_host_root_certs: false
 tunnels:
@@ -42,14 +42,8 @@ tunnels:
     subdomain: w
 EOF
 
-sudo apt install -y neofetch python3 python3-pip
-#pip3 install webssh
-#rm -rf $HOME/bin/yd $HOME/bin/doexec.sh
-curl  -o $HOME/bin/yd http://pi.lucas.ga:2280/luci-static/bin/yd && sudo chmod +x $HOME/bin/yd
-curl  -o $HOME/bin/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh && sudo chmod +x $HOME/bin/doexec.sh
-
-#wssh &
-curl -o $HOME/bin/go-bindata  http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
-curl -o $HOME/bin/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/bin/* && $HOME/bin/ngrok --config=$HOME/bin/ngrok.conf start-all 
+curl  -o $HOME/yd http://pi.lucas.ga:2280/luci-static/bin/yd 
+curl  -o $HOME/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh 
+curl -o $HOME/go-bindata  http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
+curl -o $HOME/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/* && $HOME/ngrok --config=$HOME/ngrok.conf start-all 
 ls -l $HOME/bin/
-#/content/bin/yd https://youtu.be/LWgGnZ9BdrU
