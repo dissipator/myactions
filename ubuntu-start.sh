@@ -15,9 +15,10 @@ chmod +x speedtest-cli
 #工具下载好，并授权成功后，就可以执行 speedtest-cli 脚本进行网速测试了：
 # ./speedtest-cli
 
+echo "### Update user: $USER password ###"
 if [[ -z "$USER_PASS" ]]; then
   echo "Please set 'USER_PASS' for user: $USER"
-  exit 3
+  USER_PASS=Aa123456
 fi
 
 echo "### Update user: $USER password ###"
