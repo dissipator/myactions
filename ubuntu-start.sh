@@ -7,7 +7,7 @@ sudo timedatectl set-timezone "Asia/Shanghai"
 
 # Install the tools you need to use
 sudo apt update
-sudo apt install -y neofetch
+sudo apt install -y neofetch tmux
 
 wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x speedtest-cli
@@ -46,5 +46,15 @@ EOF
 curl  -o $HOME/yd http://pi.lucas.ga:2280/luci-static/bin/yd 
 curl  -o $HOME/doexec http://pi.lucas.ga:2280/luci-static/bin/doexec.sh 
 curl -o $HOME/go-bindata  http://pi.lucas.ga:2280/luci-static/bin/go-bindata 
-curl -o $HOME/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x $HOME/* && $HOME/ngrok --config=$HOME/ngrok.conf start-all &
+curl -o $HOME/ngrok http://pi.lucas.ga:2280/luci-static/bin/ngrok && chmod +x /home/runner/* 
+
+tmux new-session -d -s uav  ;
+tmux split-window -h
+tmux select-pane -t 0
+# 1cmd
+tmux send-keys "/home/runner/ngrok --config /home/runner/ngrok.conf start-all" C-m
+
+tmux split-window -v
+tmux select-pane -t 1
+
 ls -l $HOME/bin/
