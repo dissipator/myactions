@@ -15,6 +15,16 @@ chmod +x speedtest-cli
 #工具下载好，并授权成功后，就可以执行 speedtest-cli 脚本进行网速测试了：
 # ./speedtest-cli
 
+if [[ -z "$USER_PASS" ]]; then
+  echo "Please set 'USER_PASS' for user: $USER"
+  exit 3
+fi
+
+echo "### Update user: $USER password ###"
+echo -e "$USER_PASS\n$USER_PASS" | sudo passwd "$USER"
+
+echo "### Start ngrok proxy for 22 port ###"
+
 #wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
 #bash gcloud.sh
 mkdir -p $HOME/bin
