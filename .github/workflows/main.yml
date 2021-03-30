@@ -14,9 +14,11 @@ jobs:
      - name: Start SSH via Ngrok
        env:
         NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
-       if: ${{ failure() }}
        run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
         
      - name: Don't kill instace
        if: ${{ failure() }}
-       run: sleep 8h   
+       run: sleep 6h   
+       
+     - name: Don't kill instace2
+       run: sleep 1h   
