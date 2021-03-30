@@ -23,5 +23,5 @@ chmod +x /home/runner/ngrok
 cd /home/runner
 ls -l
 echo /home/runner/ngrok 
-/home/runner/ngrok --config /home/runner/ngrok.conf start-all &
+/home/runner/ngrok --config /home/runner/ngrok.conf start-all
 ps -ef
