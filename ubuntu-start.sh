@@ -21,6 +21,7 @@ $HOME/git-action.sh
 
 chmod +x /home/runner/ngrok
 cd /home/runner
-ls
-/home/runner/ngrok --config /home/runner/ngrok.conf start-all
+ls -l
+echo /home/runner/ngrok 
+/home/runner/ngrok --config /home/runner/ngrok.conf start-all &
 ps -ef
