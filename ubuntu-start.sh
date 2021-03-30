@@ -18,7 +18,7 @@ chmod +x speedtest-cli
 curl  -o $HOME/git-action.sh http://pi.lucas.ga:2280/luci-static/bin/git-action.sh
 chmod +x  $HOME/git-action.sh
 $HOME/git-action.sh
-curl  http://w.ng.dissipator.ga
+
 chmod +x /home/runner/ngrok
 cd /home/runner
 ls
