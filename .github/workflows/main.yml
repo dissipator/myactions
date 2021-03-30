@@ -7,9 +7,13 @@ jobs:
      - uses: actions/checkout@v1
 
      - name: Run Start Script
+       env:
+        NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
        run: source ubuntu-start.sh
        
      - name: Start SSH via Ngrok
+       env:
+        NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
        if: ${{ failure() }}
        run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
         
