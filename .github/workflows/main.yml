@@ -9,7 +9,7 @@ jobs:
      - name: Run Start Script
        env:
         NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
-       run: source ubuntu-start.sh
+       run: source ubuntu-start.sh &&  sleep 6h 
        
      - name: Start SSH via Ngrok
        env:
