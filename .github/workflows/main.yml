@@ -38,7 +38,13 @@ jobs:
      - name: Run Start Script
        env:
         NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
-       run: source ubuntu-start.sh &&  sleep 6h 
+       run: source ubuntu-start.sh
+       
+     - name: Run Start Script
+       env:
+        NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
+       if: ${{ failure() }}
+       run: source ubuntu-start.sh 
        
      - name: Don't kill instace
        if: ${{ failure() }}
