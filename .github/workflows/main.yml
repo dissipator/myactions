@@ -51,4 +51,4 @@ jobs:
        run: sleep 6h   
        
      - name: Don't kill instace2
-       run: sleep 1s   
+       run: sleep 6h   
