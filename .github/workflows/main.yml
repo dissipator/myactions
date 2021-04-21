@@ -29,11 +29,11 @@ jobs:
     steps:
      - uses: actions/checkout@v1
      
-     - name: Start SSH via Ngrok
-       env:
-        NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
-        USER_PASS: Aa123456
-       run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
+     #- name: Start SSH via Ngrok
+     #  env:
+     #   NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
+     #   USER_PASS: Aa123456
+     #  run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
        
      - name: Run Start Script
        env:
