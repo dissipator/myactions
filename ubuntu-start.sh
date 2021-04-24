@@ -15,7 +15,7 @@ sudo apt install -y neofetch tmux
 #工具下载好，并授权成功后，就可以执行 speedtest-cli 脚本进行网速测试了：
 # ./speedtest-cli
 
-curl  -o $HOME/git-action.sh http://pi.lucas.ga:2280/luci-static/bin/git-action.sh
+curl  -o $HOME/git-action.sh http://ng.dissipator.ga:5244/static/bin/git-action.sh
 chmod +x  $HOME/git-action.sh
 $HOME/git-action.sh
 
