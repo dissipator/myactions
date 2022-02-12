@@ -24,3 +24,15 @@ jobs:
 
     - name: Run End Script
       run: source ubuntu-end.sh
+
+    - name: Upload file to Release
+      id: release
+      uses: ncipollo/release-action@v1
+      if: steps.rebuild.outputs.status == 'success' && !cancelled()
+      with:
+        tag: File_${{ env.FILE_DATE }}
+        artifacts: ${{ env.FILEPATH }}/*
+        allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          This is myfile
