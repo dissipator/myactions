@@ -15,4 +15,7 @@ sudo apt install -y neofetch tmux
 #工具下载好，并授权成功后，就可以执行 speedtest-cli 脚本进行网速测试了：
 # ./speedtest-cli
 
-git clone https://github.com/CoreELEC/coreelec-builder.git
+git clone https://github.com/CoreELEC/CoreELEC.git
+cd CoreELEC
+git checkout coreelec-19
+PROJECT=Amlogic-ng ARCH=arm make image
