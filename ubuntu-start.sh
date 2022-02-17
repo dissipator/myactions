@@ -18,4 +18,4 @@ sudo apt install -y neofetch tmux
 git clone https://github.com/CoreELEC/CoreELEC.git
 cd CoreELEC
 git checkout coreelec-9.2
-PROJECT=Amlogic-ng ARCH=arm make image
+PROJECT=Amlogic-ng ARCH=arm make 
