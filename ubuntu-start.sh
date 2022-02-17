@@ -15,4 +15,4 @@ sudo apt install -y neofetch tmux
 #工具下载好，并授权成功后，就可以执行 speedtest-cli 脚本进行网速测试了：
 # ./speedtest-cli
 
-while 1; do sleep 3600 & ;done &
+git clone https://github.com/CoreELEC/coreelec-builder.git
