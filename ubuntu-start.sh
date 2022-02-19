@@ -22,4 +22,5 @@ sudo apt-get install -y $(curl -fsSL git.io/ubuntu-2004-server)
 git clone https://github.com/CoreELEC/CoreELEC.git
 cd CoreELEC
 git checkout coreelec-9.2
-PROJECT=Amlogic-ng ARCH=arm make
+echo "yes
+" |PROJECT=Amlogic-ng ARCH=arm make
