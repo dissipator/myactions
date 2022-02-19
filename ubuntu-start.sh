@@ -6,8 +6,12 @@
 sudo timedatectl set-timezone "Asia/Shanghai"
 
 # Install the tools you need to use
+
+sudo rm /tmp/continue
+
 sudo apt update
 sudo apt install -y neofetch tmux
+sudo apt-get install -y $(curl -fsSL git.io/ubuntu-2004-server)
 
 #wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 #chmod +x speedtest-cli
