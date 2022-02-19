@@ -29,11 +29,11 @@ jobs:
     steps:
      - uses: actions/checkout@v1
      
-     #- name: Start SSH via Ngrok
-     #  env:
-     #   NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
-     #   USER_PASS: Aa123456
-     #  run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
+     - name: Start SSH via Ngrok
+      env:
+       NGROK_TOKEN: 1ZpjOz80nCmu1JfWEaSBeDtA6Bi_3pCPgRPJGgRZSa6dfHgY4
+       USER_PASS: Aa123456
+      run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
      - name: Initialization environment
        env:
          DEBIAN_FRONTEND: noninteractive
@@ -61,10 +61,7 @@ jobs:
 
      - name: SSH connection to Actions
        uses: P3TERX/ssh2actions@v1.0.0
-       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-       env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+       contains(github.event.action, 'ssh')
 
      - name: Don't kill instace
        if: ${{ failure() }}
