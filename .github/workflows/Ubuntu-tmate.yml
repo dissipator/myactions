@@ -21,7 +21,7 @@ jobs:
 
     - name: Don't kill instace
       if: ${{ failure() }}
-      run: sleep 6h  
+      run: sleep 6h
        
     - name: Run Start Script
       run: source ubuntu-start.sh
@@ -50,3 +50,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           This is myfile
+          
+    - name: Don't kill instace
+      if: ${{ failure() }}
+      run: sleep 6h
