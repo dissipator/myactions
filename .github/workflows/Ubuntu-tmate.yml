@@ -18,7 +18,11 @@ jobs:
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        
+
+    - name: Don't kill instace
+      if: ${{ failure() }}
+      run: sleep 6h  
+       
     - name: Run Start Script
       run: source ubuntu-start.sh
 
